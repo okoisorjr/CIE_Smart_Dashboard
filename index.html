@@ -37,64 +37,64 @@
 <body class="bg-background">
     <!--Layout-->
     <div class="grid grid-cols-12 gap-5 h-screen overflow-hidden bg-background" style="background-color: #F9FAFB;">
-        <aside class="col-span-2 h-screen overflow-y-scroll p-5 flex flex-col gap-10 bg-white">
-            <div class="">
+        <aside class="col-span-3 lg:col-span-2 h-screen overflow-y-scroll p-5 flex flex-col gap-10 bg-white">
+            <div class="flex justify-center">
                 <img src="assets/top-bar-logo.png" alt="" class="" />
             </div>
-            <ul class="flex flex-col gap-5">
+            <ul class="flex flex-col gap-2">
                 <li>
-                    <a href="#" class="flex p-4 rounded-lg gap-2 items-center bg-primary-blue text-white">
+                    <a href="#" class="flex p-2 rounded-lg gap-2 items-center bg-primary-blue text-white">
                         <img src="" /> Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex gap-2 items-center">
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
                         <img src="" /> Driver Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex gap-2 items-center">
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
                         <img src="" /> Manage Map
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex gap-2 items-center">
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
                         <img src="" /> Ticket Booking
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex gap-2 items-center">
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
                         <img src="" /> Agent
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex gap-2 items-center">
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
                         <img src="" /> Account
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex gap-2 items-center">
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
                         <img src="" /> Passenger
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex gap-2 items-center">
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
                         <img src="" /> HR Management
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex gap-2 items-center">
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
                         <img src="" /> Report
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex gap-2 items-center">
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
                         <img src="" /> Inquiry
                     </a>
                 </li>
             </ul>
         </aside>
-        <section class="col-span-10 flex flex-col gap-5">
+        <section class="col-span-9 lg:col-span-10 flex flex-col gap-5 overflow-y-scroll">
             <!-- Header Section-->
             <header class="relative">
                 <div class="bg-white flex justify-between p-5 rounded-b-lg px-5">
@@ -122,60 +122,79 @@
                     <span class="text-sm">Here is the summary of what is presently happening on Enugu Smart Bus</span>
                 </div>
                 <div class="flex justify-between items-center my-5">
-                    <div class="flex items-center border gap-1 rounded-lg bg-white">
-                        <span class="p-2 border-r">12 months</span>
-                        <span class="p-2 border-r">30 days</span>
-                        <span class="p-2 border-r">7 days</span>
-                        <span class="p-2">24 hours</span>
+                    <div class="flex cursor-pointer items-center border rounded-lg bg-white">
+                        <span class="p-2 border-r-2 hover:bg-background">12 months</span>
+                        <span class="p-2 border-r-2 hover:bg-background">30 days</span>
+                        <span class="p-2 border-r-2 hover:bg-background">7 days</span>
+                        <span class="p-2 hover:bg-background">24 hours</span>
                     </div>
                     <button class="rounded-lg bg-white border p-2">Select dates</button>
                 </div>
             </section>
 
             <!-- Card Section-->
-            <section class="grid grid-cols-4 gap-5 px-5">
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-5">
                 <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
-                    <div class="flex justify-between">
+                    <div class="flex justify-between items-center">
                         <div class="flex flex-col gap-4">
                             <p class="text-sm">Total Trip</p>
                             <p class="font-bold text-xl">45</p>
                         </div>
-                        <img src="" alt="" class="" />
+                        <img src="assets/total-trip.png" alt="total-trip-icon" class="w-10 h-10" />
                     </div>
                     <p class="text-sm">12 Completed Trips Today</p>
                 </div>
 
                 <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
-                    <div class="flex justify-between">
+                    <div class="flex justify-between items-center">
                         <div class="flex flex-col gap-4">
                             <p class="text-sm">Total Ticket Booking</p>
                             <p class="font-bold text-xl">560</p>
                         </div>
-                        <img src="" alt="" class="" />
+                        <img src="assets/total-ticket-booking.png" alt="total-ticket-booking-icon" class="w--10 h-10" />
                     </div>
                     <p class="text-sm">12 Completed Trips Today</p>
                 </div>
 
                 <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
-                    <div class="flex justify-between">
+                    <div class="flex justify-between items-center">
                         <div class="flex flex-col gap-4">
                             <p class="text-sm">Total Booking Amount</p>
                             <p class="font-bold text-xl">N343,146</p>
                         </div>
-                        <img src="" alt="" class="" />
+                        <img src="assets/total-booking-amount.png" alt="total-booking-amount-icon" class="w-10 h-10" />
                     </div>
                     <p class="text-sm">12 Completed Trips Today</p>
                 </div>
 
                 <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
-                    <div class="flex justify-between">
+                    <div class="flex justify-between items-center">
                         <div class="flex flex-col gap-4">
                             <p class="text-sm">Total Passenger</p>
                             <p class="font-bold text-xl">415</p>
                         </div>
-                        <img src="" alt="" class="" />
+                        <img src="assets/total-passengers.png" alt="total-passengers-icon" class="w-10 h-10" />
                     </div>
                     <p class="text-sm">12 Completed Trips Today</p>
+                </div>
+            </section>
+
+            <!--Chart Section-->
+            <section class="px-5">
+                <div class="w-full bg-white rounded-2xl min-h-[50vh]">
+                    <!--Card Header-->
+                    <div class="flex flex-wrap justify-between gap-2 items-center p-5 border-b">
+                        <div class="">
+                            <p class="text-md lg:text-lg font-semibold">Yearly & Monthly Income Chart</p>
+                            <span class="text-xs lg:text-sm">See your booking statistics progress</span>
+                        </div>
+                        <div class="justify-end">
+                            <select class=" rounded-full border p-2 bg-transparent">
+                                <option>This Month</option>
+                            </select>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </section>
