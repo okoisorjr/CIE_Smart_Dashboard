@@ -68,106 +68,95 @@
     <main class="lg:ml-64 min-h-screen">
         <!-- Header -->
         <header class="bg-white shadow-sm fixed top-0 w-full z-30">
-            <div class="flex items-center justify-between px-4 py-8">
-                <!-- Hamburger Menu -->
-                <button onclick="toggleSidebar()" class="lg:hidden p-2 rounded-md hover:bg-gray-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-
-                <h1 class="text-gray-400 text-sm lg:hidden">SMARTBUS USER Dsh</h1>
-                
-                <!-- Search Bar -->
-                <div class="hidden lg:flex flex-1 max-w-md mx-4">
-                    <div class="relative w-full">
-                        <input type="text" placeholder="Search drivers, agent and ticket" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
-                        <svg class="absolute left-3 top-2.5 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </div>
+            <!-- Hero Section with Background -->
+            <div class="relative bg-gradient-to-r from-indigo-900 via-blue-800 to-indigo-900 px-4 py-12 overflow-hidden">
+                <!-- Background Image Overlay -->
+                <div class="absolute inset-0 opacity-30">
+                    <img src="assets/hero-banner.png" alt="Bus Background" class="w-full h-full object-cover">
                 </div>
-
-                <!-- Right Side -->
-                <div class="flex items-center gap-4">
-                    <button class="relative">
-                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                        </svg>
-                        <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-                    </button>
+                
+                <!-- Content -->
+                <div class="relative z-10 flex items-center justify-between">
+                    <div>
+                        <h1 class="text-white text-3xl lg:text-4xl font-semibold">User Dashboard</h1>
+                    </div>
                     
-                    <div class="flex items-center gap-2">
-                        <img src="https://ui-avatars.com/api/?name=Praise+Adefemi&background=4f46e5&color=fff" alt="Profile" class="w-8 h-8 rounded-full">
-                        <div class="hidden md:block">
-                            <p class="text-sm font-semibold">Praise Adefemi</p>
-                            <p class="text-xs text-gray-500">Admin</p>
+                    <!-- Right Side Profile/Notification (Desktop) -->
+                    <div class="hidden lg:flex items-center gap-4">
+                        <button class="relative">
+                            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                                </svg>
+                            </div>
+                            <span class="absolute -top-1 -right-1 w-3 h-3 bg-pink-500 rounded-full border-2 border-indigo-900"></span>
+                        </button>
+                        
+                        <div class="flex items-center gap-2">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-white font-bold">
+                                D
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Mobile Search -->
-            <div class="lg:hidden px-4 pb-4">
-                <div class="relative">
-                    <input type="text" placeholder="Search drivers, agent and ticket" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
-                    <svg class="absolute left-3 top-2.5 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
+                    <!-- Mobile Menu Button -->
+                    <button onclick="toggleSidebar()" class="lg:hidden p-2 rounded-md bg-white/20 backdrop-blur-sm">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex gap-4 px-4 pb-4">
-                <button class="bg-teal-600 text-white py-2 px-5 rounded-lg font-semibold hover:bg-teal-700">
+            <div class="flex gap-4 px-4 pb-4 mt-5">
+                <button class="bg-teal-600 text-white py-2 px-10 rounded-lg font-semibold hover:bg-teal-700">
                     Top up Wallet
                 </button>
-                <button class="bg-indigo-900 text-white py-2 px-5 rounded-lg font-semibold hover:bg-indigo-800">
+                <button class="bg-indigo-900 text-white py-2 px-10 rounded-lg font-semibold hover:bg-indigo-800">
                     Book Ticket
                 </button>
             </div>
         </header>
 
         <!-- Dashboard Content -->
-        <div class="p-4 lg:p-6 pt-40 lg:pt-48">
+        <div class="p-4 lg:p-12 pt-60 lg:pt-60">
             <!-- Profile Card and Stats -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-                <!-- Profile Card -->
-                <div class="bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl p-6">
-                    <div class="flex flex-col items-center">
-                        <div class="relative">
-                            <img src="https://ui-avatars.com/api/?name=David+Ifeanyi&background=4f46e5&color=fff&size=128" alt="David Ifeanyi" class="w-24 h-24 rounded-full border-4 border-white">
-                            <button class="absolute bottom-0 right-0 bg-white rounded-full p-1.5 shadow-lg">
-                                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <h3 class="mt-4 text-lg font-semibold">David Ifeanyi</h3>
+            <div class="flex flex-col lg:flex-row gap-4 mb-6">
+                <div class="flex flex-col items-center ">
+                    <div class="relative">
+                        <img src="assets/person.png" alt="David Ifeanyi" class="w-24 h-24 rounded-full lg:w-40 lg:h-40">
+                        <button class="absolute bottom-0 right-0 bg-white rounded-full p-1.5 shadow-lg">
+                            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                            </svg>
+                        </button>
                     </div>
-                    <div class="mt-6">
-                        <p class="text-sm text-gray-600 mb-1">Wallet Balance</p>
-                        <p class="text-3xl font-bold">N9,000.00</p>
-                        <div class="flex items-center mt-2 text-sm text-green-600">
-                            <span class="font-semibold">+10%</span>
-                            <span class="ml-2 text-gray-600">From last month</span>
-                        </div>
+                    <h3 class="mt-3 text-lg font-semibold">David Ifeanyi</h3>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-6 flex-1 flex flex-col justify-between">
+                    <p class="text-sm text-gray-600 mb-2">Wallet Balance</p>
+                    <p class="text-4xl font-bold mb-4">N9,000.00</p>
+                    <div class="flex items-center text-sm">
+                        <span class="font-semibold text-green-600">+10%</span>
+                        <span class="ml-2 text-gray-500">From last month</span>
                     </div>
                 </div>
 
-                <!-- Amount Spent Card -->
-                <div class="bg-gradient-to-br from-green-100 to-green-200 rounded-xl p-6">
-                    <p class="text-sm text-gray-600 mb-1">Amount Spent</p>
-                    <p class="text-3xl font-bold">N3,000.00</p>
-                    <div class="flex items-center mt-2 text-sm text-green-600">
-                        <span class="font-semibold">+15%</span>
-                        <span class="ml-2 text-gray-600">From last month</span>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 flex-1 flex flex-col justify-between">
+                    <p class="text-sm text-gray-600 mb-2">Amount Spent</p>
+                    <p class="text-4xl font-bold mb-4">N3,000.00</p>
+                    <div class="flex items-center text-sm">
+                        <span class="font-semibold text-green-600">+15%</span>
+                        <span class="ml-2 text-gray-500">From last month</span>
                     </div>
                 </div>
             </div>
 
+
             <!-- Recent Routes -->
-            <div class="bg-white rounded-xl shadow-sm p-6">
+            <div class=" p-6">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-xl font-bold">Recent Routes</h2>
                     <a href="#" class="text-purple-600 text-sm font-semibold flex items-center hover:text-purple-700">
@@ -179,14 +168,12 @@
                 </div>
 
                 <!-- Routes List -->
-                <div class="space-y-4">
+                <div class="space-y-2">
                     <!-- Route 1 -->
-                    <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition">
+                    <div class="bg-white shadow-sm cursor-pointer flex items-center justify-between p-4 pointer rounded-lg transition">
                         <div class="flex items-center gap-4">
                             <div class="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                </svg>
+                                <img src="assets/route-1.png" alt="User Avatar" class="w-full">
                             </div>
                             <div>
                                 <h3 class="font-semibold">Enugu - Nsukka</h3>
@@ -201,12 +188,10 @@
                     </div>
 
                     <!-- Route 2 -->
-                    <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition">
+                    <div class="bg-white shadow-sm cursor-pointer flex items-center justify-between p-4 pointer rounded-lg transition">
                         <div class="flex items-center gap-4">
                             <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                </svg>
+                                <img src="assets/route-2.png" alt="User Avatar" class="w-full">
                             </div>
                             <div>
                                 <h3 class="font-semibold">Enugu - Abakpa</h3>
@@ -221,12 +206,10 @@
                     </div>
 
                     <!-- Route 3 -->
-                    <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition">
+                    <div class="bg-white shadow-sm cursor-pointer flex items-center justify-between p-4 pointer rounded-lg transition">
                         <div class="flex items-center gap-4">
                             <div class="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                </svg>
+                                <img src="assets/route-3.png" alt="User Avatar" class="w-full">
                             </div>
                             <div>
                                 <h3 class="font-semibold">Federal Housing - Nsukka</h3>
@@ -241,12 +224,10 @@
                     </div>
 
                     <!-- Route 4 -->
-                    <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition">
+                    <div class="bg-white shadow-sm cursor-pointer flex items-center justify-between p-4 pointer rounded-lg transition">
                         <div class="flex items-center gap-4">
                             <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                </svg>
+                                <img src="assets/route-2.png" alt="User Avatar" class="w-full">
                             </div>
                             <div>
                                 <h3 class="font-semibold">Enugu - Abakpa</h3>
