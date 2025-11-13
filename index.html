@@ -38,8 +38,10 @@
 <body class="bg-background">
     <!--Layout-->
     <div class="grid grid-cols-12 gap-5 h-screen overflow-hidden bg-background" style="background-color: #F9FAFB;">
-        <aside class="col-span-3 lg:col-span-2 h-screen overflow-y-scroll p-5 flex flex-col gap-10 bg-white">
-            <div class="flex justify-center">
+        <!--Side Menu-->
+        <aside
+            class="hidden md:block md:col-span-3 lg:block lg:col-span-2 h-screen overflow-y-scroll p-5 flex flex-col gap-10 bg-white">
+            <div class="flex justify-center my-5">
                 <img src="assets/top-bar-logo.png" alt="" class="" />
             </div>
             <ul class="flex flex-col gap-2">
@@ -114,10 +116,10 @@
                 </li>
             </ul>
         </aside>
-        <section class="col-span-9 lg:col-span-10 flex flex-col gap-5 overflow-y-scroll">
+        <section class="col-span-12 md:col-span-9 lg:col-span-10 flex flex-col gap-5 overflow-y-scroll">
             <!-- Header Section-->
             <header class="relative">
-                <div class="bg-white flex justify-between p-5 rounded-b-lg px-5">
+                <div class="bg-white flex items-center justify-between p-5 rounded-b-lg px-5">
                     <div class="max-w-xl flex gap-2 border rounded-full p-2 bg-background">
                         <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -127,11 +129,12 @@
                             placeholder="Search drivers, agent and ticket" />
                     </div>
                     <div class="flex items-center gap-5">
-                        <div class="bg-background rounded-full p-2">
-                            <span class="w-8 h-8 rounded-full bg-black"></span>
-                            <div>
+                        <img src="assets/bell.png" alt="" class="w-8 h-8" />
+                        <div class="bg-background rounded-full px-2 flex items-center gap-4">
+                            <img src="assets/profile-pic.png" alt="profile-img" class="rounded-full w-8 h-8" />
+                            <div class="hidden md:block lg:block">
                                 <p class="font-semibold">Praise Adefemi</p>
-                                <span></span>
+                                <span class="text-xs">Admin</span>
                             </div>
                         </div>
                     </div>
@@ -144,15 +147,15 @@
                     <p class="text-2xl font-bold">Good morning, Admin.</p>
                     <span class="text-sm">Here is the summary of what is presently happening on Enugu Smart Bus</span>
                 </div>
-                <div class="flex justify-between items-center my-5">
+                <div class="flex flex-wrap gap-5 justify-between items-center my-5">
                     <div class="flex cursor-pointer items-center border rounded-lg bg-white">
                         <span class="p-2 border-r-2 hover:bg-background">12 months</span>
                         <span class="p-2 border-r-2 hover:bg-background">30 days</span>
                         <span class="p-2 border-r-2 hover:bg-background">7 days</span>
                         <span class="p-2 hover:bg-background">24 hours</span>
                     </div>
-                    <div class="flex gap-4 items-center rounded-lg border bg-white">
-                        <img src="" />
+                    <div class="flex px-2 items-center rounded-lg border bg-white">
+                        <img src="assets/calendar.png" alt="calendar-icon" class="w-5 h-5" />
                         <select class="bg-transparent p-2">
                             <option>Select dates</option>
                         </select>
@@ -170,7 +173,7 @@
                         </div>
                         <img src="assets/total-trip.png" alt="total-trip-icon" class="w-10 h-10" />
                     </div>
-                    <p class="text-sm">12 Completed Trips Today</p>
+                    <p class="text-xs">12 Completed Trips Today</p>
                 </div>
 
                 <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
@@ -181,7 +184,7 @@
                         </div>
                         <img src="assets/total-ticket-booking.png" alt="total-ticket-booking-icon" class="w--10 h-10" />
                     </div>
-                    <p class="text-sm">12 Completed Trips Today</p>
+                    <p class="text-xs">12 Completed Trips Today</p>
                 </div>
 
                 <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
@@ -192,7 +195,7 @@
                         </div>
                         <img src="assets/total-booking-amount.png" alt="total-booking-amount-icon" class="w-10 h-10" />
                     </div>
-                    <p class="text-sm">12 Completed Trips Today</p>
+                    <p class="text-xs">12 Completed Trips Today</p>
                 </div>
 
                 <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
@@ -203,13 +206,13 @@
                         </div>
                         <img src="assets/total-passengers.png" alt="total-passengers-icon" class="w-10 h-10" />
                     </div>
-                    <p class="text-sm">12 Completed Trips Today</p>
+                    <p class="text-xs">12 Completed Trips Today</p>
                 </div>
             </section>
 
             <!--Chart Section-->
             <section class="px-5">
-                <div class="w-full bg-white rounded-2xl min-h-[50vh]">
+                <div class="w-full bg-white rounded-2xl">
                     <!--Card Header-->
                     <div class="flex flex-wrap justify-between gap-2 items-center p-5 border-b">
                         <div class="">
@@ -231,8 +234,8 @@
             </section>
 
             <!-- Chart Section 2-->
-            <section class="px-5 grid grid-cols-3 gap-5">
-                <div class="col-span-2 w-full bg-white rounded-2xl min-h-[50vh]">
+            <section class="px-5 grid grid-cols-1 lg:grid-cols-3 gap-5">
+                <div class="col-span-1 lg:col-span-2 w-full bg-white rounded-2xl">
                     <!--Card Header-->
                     <div class="flex flex-wrap justify-between gap-2 items-center p-5">
                         <p class="text-md">Expenses Chart</p>
@@ -246,7 +249,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-1 w-full bg-white rounded-2xl min-h-[50vh]">
+                <div class="col-span-1 w-full bg-white rounded-2xl">
                     <div class="p-5">
                         <p class="text-xl font-bold">Report Summary</p>
                     </div>
