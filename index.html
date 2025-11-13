@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enugu Smart Bus System Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-blue": "#1f2b6c",
+                        "primary-green": "#27c840",
+                        "dark-green": "#22b038",
+                        "light-green": "#0f9918",
+                        "dark-blue": "#001447",
+                        background: "#F9FAFB",
+                        overlay: "#00131ac4",
+                    },
+                    fontFamily: {
+                        inter: ["Inter", "sans-serif"],
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-background">
+    <!--Layout-->
+    <div class="grid grid-cols-12 gap-5 h-screen overflow-hidden bg-background" style="background-color: #F9FAFB;">
+        <aside class="col-span-2 h-screen overflow-y-scroll p-5 flex flex-col gap-10 bg-white">
+            <div class="">
+                <img src="assets/top-bar-logo.png" alt="" class="" />
+            </div>
+            <ul class="flex flex-col gap-5">
+                <li>
+                    <a href="#" class="flex p-4 rounded-lg gap-2 items-center bg-primary-blue text-white">
+                        <img src="" /> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex gap-2 items-center">
+                        <img src="" /> Driver Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex gap-2 items-center">
+                        <img src="" /> Manage Map
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex gap-2 items-center">
+                        <img src="" /> Ticket Booking
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex gap-2 items-center">
+                        <img src="" /> Agent
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex gap-2 items-center">
+                        <img src="" /> Account
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex gap-2 items-center">
+                        <img src="" /> Passenger
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex gap-2 items-center">
+                        <img src="" /> HR Management
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex gap-2 items-center">
+                        <img src="" /> Report
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex gap-2 items-center">
+                        <img src="" /> Inquiry
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <section class="col-span-10 flex flex-col gap-5">
+            <!-- Header Section-->
+            <header class="relative">
+                <div class="bg-white flex justify-between p-5 rounded-b-lg px-5">
+                    <div class="max-w-xl border rounded-full p-2 bg-background">
+                        <i></i>
+                        <input class="w-full focus:outline-none bg-transparent"
+                            placeholder="Search drivers, agent and ticket" />
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <div class="bg-background rounded-full p-2">
+                            <span class="w-8 h-8 rounded-full bg-black"></span>
+                            <div>
+                                <p class="font-semibold">Praise Adefemi</p>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!---->
+            <section class="flex flex-col gap-5 px-5">
+                <div class="">
+                    <p class="text-2xl font-bold">Good morning, Admin.</p>
+                    <span class="text-sm">Here is the summary of what is presently happening on Enugu Smart Bus</span>
+                </div>
+                <div class="flex justify-between items-center my-5">
+                    <div class="flex items-center border gap-1 rounded-lg bg-white">
+                        <span class="p-2 border-r">12 months</span>
+                        <span class="p-2 border-r">30 days</span>
+                        <span class="p-2 border-r">7 days</span>
+                        <span class="p-2">24 hours</span>
+                    </div>
+                    <button class="rounded-lg bg-white border p-2">Select dates</button>
+                </div>
+            </section>
+
+            <!-- Card Section-->
+            <section class="grid grid-cols-4 gap-5 px-5">
+                <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
+                    <div class="flex justify-between">
+                        <div class="flex flex-col gap-4">
+                            <p class="text-sm">Total Trip</p>
+                            <p class="font-bold text-xl">45</p>
+                        </div>
+                        <img src="" alt="" class="" />
+                    </div>
+                    <p class="text-sm">12 Completed Trips Today</p>
+                </div>
+
+                <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
+                    <div class="flex justify-between">
+                        <div class="flex flex-col gap-4">
+                            <p class="text-sm">Total Ticket Booking</p>
+                            <p class="font-bold text-xl">560</p>
+                        </div>
+                        <img src="" alt="" class="" />
+                    </div>
+                    <p class="text-sm">12 Completed Trips Today</p>
+                </div>
+
+                <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
+                    <div class="flex justify-between">
+                        <div class="flex flex-col gap-4">
+                            <p class="text-sm">Total Booking Amount</p>
+                            <p class="font-bold text-xl">N343,146</p>
+                        </div>
+                        <img src="" alt="" class="" />
+                    </div>
+                    <p class="text-sm">12 Completed Trips Today</p>
+                </div>
+
+                <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
+                    <div class="flex justify-between">
+                        <div class="flex flex-col gap-4">
+                            <p class="text-sm">Total Passenger</p>
+                            <p class="font-bold text-xl">415</p>
+                        </div>
+                        <img src="" alt="" class="" />
+                    </div>
+                    <p class="text-sm">12 Completed Trips Today</p>
+                </div>
+            </section>
+        </section>
+    </div>
+</body>
+
+</html>
