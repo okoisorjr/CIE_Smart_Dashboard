@@ -27,6 +27,7 @@
             },
         };
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
@@ -44,52 +45,71 @@
             <ul class="flex flex-col gap-2">
                 <li>
                     <a href="#" class="flex p-2 rounded-lg gap-2 items-center bg-primary-blue text-white">
-                        <img src="" /> Dashboard
+                        <img src="assets/dashboard.png" class="w-5 h-5" /> Dashboard
                     </a>
                 </li>
                 <li>
                     <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="" /> Driver Dashboard
+                        <img src="assets/user-icon.png" /> Driver Dashboard
                     </a>
                 </li>
                 <li>
                     <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="" /> Manage Map
+                        <img src="assets/map-icon.png" /> Manage Map
                     </a>
                 </li>
                 <li>
                     <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="" /> Ticket Booking
+                        <img src="assets/ticket-icon.png" /> Ticket Booking
                     </a>
                 </li>
                 <li>
                     <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="" /> Agent
+                        <img src="assets/agent.png" /> Agent
                     </a>
                 </li>
                 <li>
                     <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="" /> Account
+                        <img src="assets/account-icon.png" /> Account
                     </a>
                 </li>
                 <li>
                     <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="" /> Passenger
+                        <img src="assets/passenger-icon.png" /> Passenger
                     </a>
                 </li>
                 <li>
                     <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="" /> HR Management
+                        <img src="assets/hr-icon.png" /> HR Management
                     </a>
                 </li>
                 <li>
                     <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="" /> Report
+                        <img src="assets/report-icon.png" /> Report
                     </a>
                 </li>
                 <li>
                     <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="" /> Inquiry
+                        <img src="assets/inquiry-icon.png" /> Inquiry
+                    </a>
+                </li>
+            </ul>
+            <hr />
+            <ul>
+                <li>
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                        <img src="assets/password.png" class="w-5 h-5" /> Software Setting
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                        <img src="assets/equalizer.png" /> Website Setting
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex p-2 hover:bg-background text-red-500 transition-all rounded-lg gap-2 items-center">
+                        <img src="assets/logout.png" class="w-5 h-5" /> Logout
                     </a>
                 </li>
             </ul>
@@ -98,8 +118,11 @@
             <!-- Header Section-->
             <header class="relative">
                 <div class="bg-white flex justify-between p-5 rounded-b-lg px-5">
-                    <div class="max-w-xl border rounded-full p-2 bg-background">
-                        <i></i>
+                    <div class="max-w-xl flex gap-2 border rounded-full p-2 bg-background">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                         <input class="w-full focus:outline-none bg-transparent"
                             placeholder="Search drivers, agent and ticket" />
                     </div>
@@ -128,7 +151,12 @@
                         <span class="p-2 border-r-2 hover:bg-background">7 days</span>
                         <span class="p-2 hover:bg-background">24 hours</span>
                     </div>
-                    <button class="rounded-lg bg-white border p-2">Select dates</button>
+                    <div class="flex gap-4 items-center rounded-lg border bg-white">
+                        <img src="" />
+                        <select class="bg-transparent p-2">
+                            <option>Select dates</option>
+                        </select>
+                    </div>
                 </div>
             </section>
 
@@ -195,10 +223,191 @@
                         </div>
                     </div>
 
+                    <!--Line Chart-->
+                    <div class="p-5">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chart Section 2-->
+            <section class="px-5 grid grid-cols-3 gap-5">
+                <div class="col-span-2 w-full bg-white rounded-2xl min-h-[50vh]">
+                    <!--Card Header-->
+                    <div class="flex flex-wrap justify-between gap-2 items-center p-5">
+                        <p class="text-md">Expenses Chart</p>
+                        <select class=" rounded-full border p-2 bg-background">
+                            <option>Pick date</option>
+                        </select>
+                    </div>
+
+                    <div class="">
+                        <canvas id="mixedChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-span-1 w-full bg-white rounded-2xl min-h-[50vh]">
+                    <div class="p-5">
+                        <p class="text-xl font-bold">Report Summary</p>
+                    </div>
+
+                    <div class="">
+                        <canvas id="pieChart"></canvas>
+                    </div>
                 </div>
             </section>
         </section>
     </div>
+
+    <script>
+        // ==========================
+        // PIE CHART
+        // ==========================
+        const pieCtx = document.getElementById("pieChart").getContext("2d");
+
+        new Chart(pieCtx, {
+            type: "pie",
+            data: {
+                labels: ["Income", "Expenses", "Trip"],
+                datasets: [
+                    {
+                        label: "Distribution",
+                        data: [16868, 2568, 1568],
+                        backgroundColor: [
+                            "rgba(255, 99, 132, 0.7)",
+                            "rgba(54, 162, 235, 0.7)",
+                            "rgba(255, 206, 86, 0.7)",
+                        ],
+                        borderColor: [
+                            "rgba(255, 99, 132, 1)",
+                            "rgba(54, 162, 235, 1)",
+                            "rgba(255, 206, 86, 1)",
+                        ],
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: "bottom" },
+                    title: {
+                        display: true,
+                        text: "Color Usage Breakdown",
+                    },
+                },
+            },
+        });
+
+        // ==========================
+        // LINE CHART
+        // ==========================
+        const lineCtx = document.getElementById("lineChart").getContext("2d");
+
+        new Chart(lineCtx, {
+            type: "line",
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June"],
+                datasets: [
+                    {
+                        label: "Sales Over Time",
+                        data: [10, 20, 15, 30, 25, 40],
+                        fill: false,
+                        borderColor: "rgba(75, 192, 192, 1)",
+                        tension: 0.3,
+                        pointBackgroundColor: "rgba(75, 192, 192, 1)",
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: "top" },
+                    title: {
+                        display: true,
+                        text: "Monthly Sales Growth",
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            },
+        });
+
+        // =========================
+        // LINE & BAR CHART
+        //===========================
+        const ctx = document.getElementById("mixedChart").getContext("2d");
+
+        new Chart(ctx, {
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June"],
+                datasets: [
+                    {
+                        type: "bar",
+                        label: "Sales (in units)",
+                        data: [120, 190, 300, 500, 200, 300],
+                        backgroundColor: "rgba(54, 162, 235, 0.7)",
+                        borderColor: "rgba(54, 162, 235, 1)",
+                        borderWidth: 1,
+                        yAxisID: 'y',
+                    },
+                    {
+                        type: "line",
+                        label: "Revenue (in $)",
+                        data: [1000, 1500, 1200, 2000, 1800, 2500],
+                        borderColor: "rgba(255, 99, 132, 1)",
+                        backgroundColor: "rgba(255, 99, 132, 0.3)",
+                        fill: false,
+                        tension: 0.4,
+                        yAxisID: 'y1',
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                interaction: {
+                    mode: "index",
+                    intersect: false,
+                },
+                stacked: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Sales and Revenue Comparison (Bar + Line)",
+                    },
+                    legend: {
+                        position: "bottom",
+                    },
+                },
+                scales: {
+                    y: {
+                        type: "linear",
+                        display: true,
+                        position: "left",
+                        title: {
+                            display: true,
+                            text: "Sales (units)",
+                        },
+                    },
+                    y1: {
+                        type: "linear",
+                        display: true,
+                        position: "right",
+                        grid: {
+                            drawOnChartArea: false, // keeps the grids separate
+                        },
+                        title: {
+                            display: true,
+                            text: "Revenue ($)",
+                        },
+                    },
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>
