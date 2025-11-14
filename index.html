@@ -16,7 +16,7 @@
                         "dark-green": "#22b038",
                         "light-green": "#0f9918",
                         "dark-blue": "#001447",
-                        background: "#F9FAFB",
+                        background: "#F1F8FF",
                         overlay: "#00131ac4",
                     },
                     fontFamily: {
@@ -40,7 +40,9 @@
     <aside id="sidebar"
         class="fixed left-0 top-0 h-full w-full lg:w-64 bg-white shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50 lg:z-auto overflow-y-scroll">
         <div class="relative flex justify-between lg:justify-center my-5 px-5">
-            <img src="assets/top-bar-logo.png" alt="" class="" />
+            <div class="flex items-center justify-center w-32 h-32 rounded-full">
+                <img src="assets/top-bar-logo.png" alt="User Avatar" class="w-full rounded-full">
+            </div>
             <button id="closeButton" class="absolute right-5 lg:hidden p-2 hover:bg-gray-100 rounded-md">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
@@ -228,7 +230,7 @@
                 <!--Card Header-->
                 <div class="flex flex-wrap justify-between gap-2 items-center p-5 border-b">
                     <div class="">
-                        <p class="text-md lg:text-lg font-semibold">Yearly & Monthly Income Chart</p>
+                        <p class="text-md lg:text-lg font-bold">Yearly & Monthly Income Chart</p>
                         <span class="text-xs lg:text-sm">See your booking statistics progress</span>
                     </div>
                     <div class="justify-end">
@@ -250,7 +252,7 @@
             <div class="col-span-1 lg:col-span-2 w-full bg-white rounded-2xl">
                 <!--Card Header-->
                 <div class="flex flex-wrap justify-between gap-2 items-center p-5">
-                    <p class="text-md">Expenses Chart</p>
+                    <p class="text-md font-bold">Expenses Chart</p>
                     <select class=" rounded-full border p-2 bg-background">
                         <option>Pick date</option>
                     </select>
@@ -263,7 +265,7 @@
 
             <div class="col-span-1 w-full bg-white rounded-2xl">
                 <div class="p-5">
-                    <p class="text-xl font-bold">Report Summary</p>
+                    <p class="text-md font-bold">Report Summary</p>
                 </div>
 
                 <div class="">
