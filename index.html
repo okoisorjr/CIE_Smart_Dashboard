@@ -36,293 +36,245 @@
 </head>
 
 <body class="bg-background">
-    <!--Layout-->
-    <div class="grid grid-cols-12 gap-5 h-screen overflow-hidden bg-background" style="background-color: #F9FAFB;">
-        <!--Side Menu-->
-        <aside
-            class="hidden md:block md:col-span-3 lg:block lg:col-span-2 h-screen overflow-y-scroll p-5 flex flex-col gap-10 bg-white">
-            <div class="flex justify-center my-5">
-                <img src="assets/top-bar-logo.png" alt="" class="" />
-            </div>
-            <ul class="flex flex-col gap-2">
-                <li>
-                    <a href="#" class="flex p-2 rounded-lg gap-2 items-center bg-primary-blue text-white">
-                        <img src="assets/dashboard.png" class="w-5 h-5" /> Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/user-icon.png" /> Driver Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/map-icon.png" /> Manage Map
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/ticket-icon.png" /> Ticket Booking
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/agent.png" /> Agent
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/account-icon.png" /> Account
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/passenger-icon.png" /> Passenger
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/hr-icon.png" /> HR Management
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/report-icon.png" /> Report
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/inquiry-icon.png" /> Inquiry
-                    </a>
-                </li>
-            </ul>
-            <hr />
-            <ul>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/password.png" class="w-5 h-5" /> Software Setting
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/equalizer.png" /> Website Setting
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="flex p-2 hover:bg-background text-red-500 transition-all rounded-lg gap-2 items-center">
-                        <img src="assets/logout.png" class="w-5 h-5" /> Logout
-                    </a>
-                </li>
-            </ul>
-        </aside>
-        <section class="col-span-12 md:col-span-9 lg:col-span-10 flex flex-col gap-5 overflow-y-scroll">
-            <!-- Header Section-->
-            <header class="relative">
-                <div class="bg-white flex items-center justify-between p-5 rounded-b-lg px-5">
-                    <div class="max-w-xl flex gap-2 border rounded-full p-2 bg-background">
-                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                        <input class="w-full focus:outline-none bg-transparent"
-                            placeholder="Search drivers, agent and ticket" />
-                    </div>
-                    <div class="flex items-center gap-5">
-                        <img src="assets/bell.png" alt="" class="w-8 h-8" />
-                        <div class="hidden md:flex lg:flex bg-background rounded-full px-2 items-center gap-4">
-                            <img src="assets/profile-pic.png" alt="profile-img" class="rounded-full w-8 h-8" />
-                            <div class="">
-                                <p class="font-semibold">Praise Adefemi</p>
-                                <span class="text-xs">Admin</span>
-                            </div>
-                        </div>
-                        <button
-                            class="lg:hidden flex flex-col gap-1 cursor-pointer p-2 cursor-pointer outline-none items-center justify-center flex-shrink-0 min-w-[40px] bg-transparent border-none"
-                            aria-label="Toggle mobile menu">
-                            <span
-                                class="hamburger-line w-[25px] h-[3px] bg-primary-blue transition-all duration-300 rounded-sm block"></span>
-                            <span
-                                class="hamburger-line w-[25px] h-[3px] bg-primary-blue transition-all duration-300 rounded-sm block"></span>
-                            <span
-                                class="hamburger-line w-[25px] h-[3px] bg-primary-blue transition-all duration-300 rounded-sm block"></span>
-                        </button>
-                    </div>
-                </div>
-            </header>
+    <!-- Mobile Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
 
-            <!--Mobile Nav-->
-            <div class="top-bar-links lg:hidden">
-                <ul class="mobile-nav-list">
-                    <li>
-                        <a href="../index.html"
-                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0]">Home</a>
-                    </li>
-                    <li class="mobile-dropdown-item">
-                        <a href="../about/"
-                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0] flex items-center justify-between"
-                            data-dropdown-toggle>About
-                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
-                        </a>
-                        <ul class="mobile-dropdown-menu">
-                            <li>
-                                <a href="../about/"
-                                    class="block px-4 py-2 text-primary-blue no-underline font-inter font-medium text-sm leading-5 hover:bg-[#f0f0f0] transition-colors duration-200 pl-8">About
-                                    ESB</a>
-                            </li>
-                            <li>
-                                <a href="../blue/"
-                                    class="block px-4 py-2 text-primary-blue no-underline font-inter font-medium text-sm leading-5 hover:bg-[#f0f0f0] transition-colors duration-200 pl-8">About
-                                    BNML</a>
-                            </li>
-                            <li>
-                                <a href="../team/"
-                                    class="block px-4 py-2 text-primary-blue no-underline font-inter font-medium text-sm leading-5 hover:bg-[#f0f0f0] transition-colors duration-200 pl-8">Our
-                                    Team</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../how-it-works/"
-                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0]">How
-                            it works</a>
-                    </li>
-                    <li>
-                        <a href="../services/"
-                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0]">Services</a>
-                    </li>
-                    <li>
-                        <a href="../blogs/"
-                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0]">Blog</a>
-                    </li>
-                    <li>
-                        <a href="../contact/"
-                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0]">Contact
-                            Us</a>
-                    </li>
-                </ul>
-            </div>
+    <!--Side Menu-->
+    <aside id="sidebar"
+        class="fixed left-0 top-0 h-full w-full lg:w-64 bg-white shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50 lg:z-auto overflow-y-scroll">
+        <div class="relative flex justify-between lg:justify-center my-5 px-5">
+            <img src="assets/top-bar-logo.png" alt="" class="" />
+            <button id="closeButton" class="absolute right-5 lg:hidden p-2 hover:bg-gray-100 rounded-md">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <ul class="flex flex-col gap-2 p-5">
+            <li>
+                <a href="#" class="flex p-2 rounded-lg gap-2 items-center bg-primary-blue text-white">
+                    <img src="assets/dashboard.png" class="w-5 h-5" /> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/user-icon.png" /> Driver Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/map-icon.png" /> Manage Map
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/ticket-icon.png" /> Ticket Booking
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/agent.png" /> Agent
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/account-icon.png" /> Account
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/passenger-icon.png" /> Passenger
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/hr-icon.png" /> HR Management
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/report-icon.png" /> Report
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/inquiry-icon.png" /> Inquiry
+                </a>
+            </li>
+        </ul>
+        <hr />
+        <ul class="p-5">
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/password.png" class="w-5 h-5" /> Software Setting
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/equalizer.png" /> Website Setting
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="flex p-2 hover:bg-background text-red-500 transition-all rounded-lg gap-2 items-center">
+                    <img src="assets/logout.png" class="w-5 h-5" /> Logout
+                </a>
+            </li>
+        </ul>
+    </aside>
 
-            <!---->
-            <section class="flex flex-col gap-5 px-5">
-                <div class="">
-                    <p class="text-2xl font-bold">Good morning, Admin.</p>
-                    <span class="text-sm">Here is the summary of what is presently happening on Enugu Smart Bus</span>
+    <main class="lg:ml-72 min-h-screen overflow-y-scroll">
+        <!-- Header Section-->
+        <header class="relative">
+            <div class="bg-white flex items-center justify-between p-5 rounded-b-lg px-5">
+                <div class="max-w-xl flex gap-2 border rounded-full p-2 bg-background">
+                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input class="w-full focus:outline-none bg-transparent"
+                        placeholder="Search drivers, agent and ticket" />
                 </div>
-                <div class="flex flex-wrap gap-5 justify-between items-center my-5">
-                    <div class="flex cursor-pointer items-center border rounded-lg bg-white">
-                        <span class="p-2 border-r-2 hover:bg-background">12 months</span>
-                        <span class="p-2 border-r-2 hover:bg-background">30 days</span>
-                        <span class="p-2 border-r-2 hover:bg-background">7 days</span>
-                        <span class="p-2 hover:bg-background">24 hours</span>
-                    </div>
-                    <div class="flex px-2 items-center rounded-lg border bg-white">
-                        <img src="assets/calendar.png" alt="calendar-icon" class="w-5 h-5" />
-                        <select class="bg-transparent p-2">
-                            <option>Select dates</option>
-                        </select>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Card Section-->
-            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-5">
-                <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
-                    <div class="flex justify-between items-center">
-                        <div class="flex flex-col gap-4">
-                            <p class="text-sm">Total Trip</p>
-                            <p class="font-bold text-xl">45</p>
-                        </div>
-                        <img src="assets/total-trip.png" alt="total-trip-icon" class="w-10 h-10" />
-                    </div>
-                    <p class="text-xs">12 Completed Trips Today</p>
-                </div>
-
-                <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
-                    <div class="flex justify-between items-center">
-                        <div class="flex flex-col gap-4">
-                            <p class="text-sm">Total Ticket Booking</p>
-                            <p class="font-bold text-xl">560</p>
-                        </div>
-                        <img src="assets/total-ticket-booking.png" alt="total-ticket-booking-icon" class="w--10 h-10" />
-                    </div>
-                    <p class="text-xs">12 Completed Trips Today</p>
-                </div>
-
-                <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
-                    <div class="flex justify-between items-center">
-                        <div class="flex flex-col gap-4">
-                            <p class="text-sm">Total Booking Amount</p>
-                            <p class="font-bold text-xl">N343,146</p>
-                        </div>
-                        <img src="assets/total-booking-amount.png" alt="total-booking-amount-icon" class="w-10 h-10" />
-                    </div>
-                    <p class="text-xs">12 Completed Trips Today</p>
-                </div>
-
-                <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
-                    <div class="flex justify-between items-center">
-                        <div class="flex flex-col gap-4">
-                            <p class="text-sm">Total Passenger</p>
-                            <p class="font-bold text-xl">415</p>
-                        </div>
-                        <img src="assets/total-passengers.png" alt="total-passengers-icon" class="w-10 h-10" />
-                    </div>
-                    <p class="text-xs">12 Completed Trips Today</p>
-                </div>
-            </section>
-
-            <!--Chart Section-->
-            <section class="px-5">
-                <div class="w-full bg-white rounded-2xl">
-                    <!--Card Header-->
-                    <div class="flex flex-wrap justify-between gap-2 items-center p-5 border-b">
+                <div class="flex items-center gap-5">
+                    <img src="assets/bell.png" alt="" class="w-8 h-8" />
+                    <div class="hidden md:flex lg:flex bg-background rounded-full px-2 items-center gap-4">
+                        <img src="assets/profile-pic.png" alt="profile-img" class="rounded-full w-8 h-8" />
                         <div class="">
-                            <p class="text-md lg:text-lg font-semibold">Yearly & Monthly Income Chart</p>
-                            <span class="text-xs lg:text-sm">See your booking statistics progress</span>
-                        </div>
-                        <div class="justify-end">
-                            <select class=" rounded-full border p-2 bg-transparent">
-                                <option>This Month</option>
-                            </select>
+                            <p class="font-semibold">Praise Adefemi</p>
+                            <span class="text-xs">Admin</span>
                         </div>
                     </div>
-
-                    <!--Line Chart-->
-                    <div class="p-5">
-                        <canvas id="lineChart"></canvas>
-                    </div>
+                    <button id="menuButton" class="lg:hidden p-2 rounded-md bg-primary-blue">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
-            </section>
+            </div>
+        </header>
 
-            <!-- Chart Section 2-->
-            <section class="px-5 grid grid-cols-1 lg:grid-cols-3 gap-5">
-                <div class="col-span-1 lg:col-span-2 w-full bg-white rounded-2xl">
-                    <!--Card Header-->
-                    <div class="flex flex-wrap justify-between gap-2 items-center p-5">
-                        <p class="text-md">Expenses Chart</p>
-                        <select class=" rounded-full border p-2 bg-background">
-                            <option>Pick date</option>
+        <!---->
+        <section class="flex flex-col gap-5 px-5">
+            <div class="">
+                <p class="text-2xl font-bold">Good morning, Admin.</p>
+                <span class="text-sm">Here is the summary of what is presently happening on Enugu Smart
+                    Bus</span>
+            </div>
+            <div class="flex flex-wrap gap-5 justify-between items-center my-5">
+                <div class="flex cursor-pointer items-center border rounded-lg bg-white">
+                    <span class="p-2 border-r-2 hover:bg-background">12 months</span>
+                    <span class="p-2 border-r-2 hover:bg-background">30 days</span>
+                    <span class="p-2 border-r-2 hover:bg-background">7 days</span>
+                    <span class="p-2 hover:bg-background">24 hours</span>
+                </div>
+                <div class="flex px-2 items-center rounded-lg border bg-white">
+                    <img src="assets/calendar.png" alt="calendar-icon" class="w-5 h-5" />
+                    <select class="bg-transparent p-2">
+                        <option>Select dates</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card Section-->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-5">
+            <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
+                <div class="flex justify-between items-center">
+                    <div class="flex flex-col gap-4">
+                        <p class="text-sm">Total Trip</p>
+                        <p class="font-bold text-xl">45</p>
+                    </div>
+                    <img src="assets/total-trip.png" alt="total-trip-icon" class="w-10 h-10" />
+                </div>
+                <p class="text-xs">12 Completed Trips Today</p>
+            </div>
+
+            <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
+                <div class="flex justify-between items-center">
+                    <div class="flex flex-col gap-4">
+                        <p class="text-sm">Total Ticket Booking</p>
+                        <p class="font-bold text-xl">560</p>
+                    </div>
+                    <img src="assets/total-ticket-booking.png" alt="total-ticket-booking-icon" class="w--10 h-10" />
+                </div>
+                <p class="text-xs">12 Completed Trips Today</p>
+            </div>
+
+            <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
+                <div class="flex justify-between items-center">
+                    <div class="flex flex-col gap-4">
+                        <p class="text-sm">Total Booking Amount</p>
+                        <p class="font-bold text-xl">N343,146</p>
+                    </div>
+                    <img src="assets/total-booking-amount.png" alt="total-booking-amount-icon" class="w-10 h-10" />
+                </div>
+                <p class="text-xs">12 Completed Trips Today</p>
+            </div>
+
+            <div class="bg-white rounded-lg flex flex-col gap-2 p-5">
+                <div class="flex justify-between items-center">
+                    <div class="flex flex-col gap-4">
+                        <p class="text-sm">Total Passenger</p>
+                        <p class="font-bold text-xl">415</p>
+                    </div>
+                    <img src="assets/total-passengers.png" alt="total-passengers-icon" class="w-10 h-10" />
+                </div>
+                <p class="text-xs">12 Completed Trips Today</p>
+            </div>
+        </section>
+
+        <!--Chart Section-->
+        <section class="px-5">
+            <div class="w-full bg-white rounded-2xl">
+                <!--Card Header-->
+                <div class="flex flex-wrap justify-between gap-2 items-center p-5 border-b">
+                    <div class="">
+                        <p class="text-md lg:text-lg font-semibold">Yearly & Monthly Income Chart</p>
+                        <span class="text-xs lg:text-sm">See your booking statistics progress</span>
+                    </div>
+                    <div class="justify-end">
+                        <select class=" rounded-full border p-2 bg-transparent">
+                            <option>This Month</option>
                         </select>
                     </div>
-
-                    <div class="">
-                        <canvas id="mixedChart"></canvas>
-                    </div>
                 </div>
 
-                <div class="col-span-1 w-full bg-white rounded-2xl">
-                    <div class="p-5">
-                        <p class="text-xl font-bold">Report Summary</p>
-                    </div>
-
-                    <div class="">
-                        <canvas id="pieChart"></canvas>
-                    </div>
+                <!--Line Chart-->
+                <div class="p-5">
+                    <canvas id="lineChart"></canvas>
                 </div>
-            </section>
+            </div>
         </section>
-    </div>
+
+        <!-- Chart Section 2-->
+        <section class="px-5 grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <div class="col-span-1 lg:col-span-2 w-full bg-white rounded-2xl">
+                <!--Card Header-->
+                <div class="flex flex-wrap justify-between gap-2 items-center p-5">
+                    <p class="text-md">Expenses Chart</p>
+                    <select class=" rounded-full border p-2 bg-background">
+                        <option>Pick date</option>
+                    </select>
+                </div>
+
+                <div class="">
+                    <canvas id="mixedChart"></canvas>
+                </div>
+            </div>
+
+            <div class="col-span-1 w-full bg-white rounded-2xl">
+                <div class="p-5">
+                    <p class="text-xl font-bold">Report Summary</p>
+                </div>
+
+                <div class="">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script>
         // ==========================
