@@ -130,16 +130,78 @@
                     </div>
                     <div class="flex items-center gap-5">
                         <img src="assets/bell.png" alt="" class="w-8 h-8" />
-                        <div class="bg-background rounded-full px-2 flex items-center gap-4">
+                        <div class="hidden md:flex lg:flex bg-background rounded-full px-2 items-center gap-4">
                             <img src="assets/profile-pic.png" alt="profile-img" class="rounded-full w-8 h-8" />
-                            <div class="hidden md:block lg:block">
+                            <div class="">
                                 <p class="font-semibold">Praise Adefemi</p>
                                 <span class="text-xs">Admin</span>
                             </div>
                         </div>
+                        <button
+                            class="lg:hidden flex flex-col gap-1 cursor-pointer p-2 cursor-pointer outline-none items-center justify-center flex-shrink-0 min-w-[40px] bg-transparent border-none"
+                            aria-label="Toggle mobile menu">
+                            <span
+                                class="hamburger-line w-[25px] h-[3px] bg-primary-blue transition-all duration-300 rounded-sm block"></span>
+                            <span
+                                class="hamburger-line w-[25px] h-[3px] bg-primary-blue transition-all duration-300 rounded-sm block"></span>
+                            <span
+                                class="hamburger-line w-[25px] h-[3px] bg-primary-blue transition-all duration-300 rounded-sm block"></span>
+                        </button>
                     </div>
                 </div>
             </header>
+
+            <!--Mobile Nav-->
+            <div class="top-bar-links lg:hidden">
+                <ul class="mobile-nav-list">
+                    <li>
+                        <a href="../index.html"
+                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0]">Home</a>
+                    </li>
+                    <li class="mobile-dropdown-item">
+                        <a href="../about/"
+                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0] flex items-center justify-between"
+                            data-dropdown-toggle>About
+                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </a>
+                        <ul class="mobile-dropdown-menu">
+                            <li>
+                                <a href="../about/"
+                                    class="block px-4 py-2 text-primary-blue no-underline font-inter font-medium text-sm leading-5 hover:bg-[#f0f0f0] transition-colors duration-200 pl-8">About
+                                    ESB</a>
+                            </li>
+                            <li>
+                                <a href="../blue/"
+                                    class="block px-4 py-2 text-primary-blue no-underline font-inter font-medium text-sm leading-5 hover:bg-[#f0f0f0] transition-colors duration-200 pl-8">About
+                                    BNML</a>
+                            </li>
+                            <li>
+                                <a href="../team/"
+                                    class="block px-4 py-2 text-primary-blue no-underline font-inter font-medium text-sm leading-5 hover:bg-[#f0f0f0] transition-colors duration-200 pl-8">Our
+                                    Team</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../how-it-works/"
+                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0]">How
+                            it works</a>
+                    </li>
+                    <li>
+                        <a href="../services/"
+                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0]">Services</a>
+                    </li>
+                    <li>
+                        <a href="../blogs/"
+                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0]">Blog</a>
+                    </li>
+                    <li>
+                        <a href="../contact/"
+                            class="text-primary-blue no-underline transition-colors duration-300 font-inter font-medium text-base leading-5 hover:bg-[#f0f0f0]">Contact
+                            Us</a>
+                    </li>
+                </ul>
+            </div>
 
             <!---->
             <section class="flex flex-col gap-5 px-5">
@@ -411,6 +473,7 @@
             },
         });
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
