@@ -28,11 +28,7 @@
         };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
 </head>
 
 <body class="bg-background">
@@ -106,6 +102,11 @@
         <hr />
         <ul class="p-5">
             <li>
+                <a href="user.html" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
+                    <i class="ri-dashboard-line text-gray-500" style="font-size: 1.2rem;"></i> Dashboard 2
+                </a>
+            </li>
+            <li>
                 <a href="#" class="flex p-2 hover:bg-background transition-all rounded-lg gap-2 items-center">
                     <img src="assets/password.png" class="w-5 h-5" /> Software Setting
                 </a>
@@ -124,7 +125,7 @@
         </ul>
     </aside>
 
-    <main class="lg:ml-72 min-h-screen overflow-y-scroll">
+    <main class="lg:ml-72 flex flex-col gap-5 min-h-screen overflow-y-scroll">
         <!-- Header Section-->
         <header class="relative">
             <div class="bg-white flex items-center justify-between p-5 rounded-b-lg px-5">
