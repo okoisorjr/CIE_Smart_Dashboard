@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .sidebar-active {
-            transform: translateX(0);
+            transform: translateX(0) !important;
         }
         .overlay-active {
             display: block;
@@ -16,13 +16,20 @@
 </head>
 <body class="bg-gray-100">
     <!-- Mobile Overlay -->
-    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden hidden" onclick="toggleSidebar()"></div>
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
 
     <!-- Sidebar -->
-    <aside id="sidebar" class="fixed left-0 top-0 h-full w-64 bg-white shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50 lg:z-auto">
+    <aside id="sidebar" class="fixed left-0 top-0 h-full w-full lg:w-64 bg-white shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50 lg:z-auto">
         <div class="p-6">
-            <div class="flex items-center justify-center w-16 h-16 mx-auto rounded-full">
-                <img src="assets/top-bar-logo.png" alt="User Avatar" class="w-full rounded-full">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-center w-16 h-16 rounded-full">
+                    <img src="assets/top-bar-logo.png" alt="User Avatar" class="w-full rounded-full">
+                </div>
+                <button id="closeButton" class="lg:hidden p-2 hover:bg-gray-100 rounded-md">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
             </div>
         </div>
         
@@ -136,8 +143,10 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-6 flex-1 flex flex-col justify-between">
-                    <p class="text-sm text-gray-600 mb-2">Wallet Balance</p>
-                    <p class="text-4xl font-bold mb-4">N9,000.00</p>
+                    <div class="flex flex-col items-start text-sm">
+                        <p class="text-sm text-gray-600 mb-2">Wallet Balance</p>
+                        <p class="text-4xl font-bold mb-4">N9,000.00</p>
+                    </div>
                     <div class="flex items-center text-sm">
                         <span class="font-semibold text-green-600">+10%</span>
                         <span class="ml-2 text-gray-500">From last month</span>
@@ -145,15 +154,16 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 flex-1 flex flex-col justify-between">
-                    <p class="text-sm text-gray-600 mb-2">Amount Spent</p>
-                    <p class="text-4xl font-bold mb-4">N3,000.00</p>
+                    <div class="flex flex-col items-start text-sm">
+                        <p class="text-sm text-gray-600 mb-2">Amount Spent</p>
+                        <p class="text-4xl font-bold mb-4">N3,000.00</p>
+                    </div>
                     <div class="flex items-center text-sm">
                         <span class="font-semibold text-green-600">+15%</span>
                         <span class="ml-2 text-gray-500">From last month</span>
                     </div>
                 </div>
             </div>
-
 
             <!-- Recent Routes -->
             <div class=" p-6">
@@ -246,39 +256,24 @@
     </main>
 
     <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            
-            sidebar.classList.toggle('sidebar-active');
-            overlay.classList.toggle('overlay-active');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const menuButton = document.getElementById('menuButton');
+        const closeButton = document.getElementById('closeButton');
+
+        function openSidebar() {
+            sidebar.classList.add('sidebar-active');
+            overlay.classList.remove('hidden');
         }
 
-        // Mobile menu button click handler
-        document.getElementById('menuButton').addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleSidebar();
-            console.log('Menu button clicked');
-        });
+        function closeSidebar() {
+            sidebar.classList.remove('sidebar-active');
+            overlay.classList.add('hidden');
+        }
 
-        // Overlay click handler
-        document.getElementById('overlay').addEventListener('click', function() {
-            toggleSidebar();
-        });
-
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', function(event) {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            const menuButton = document.getElementById('menuButton');
-            const isClickInsideSidebar = sidebar.contains(event.target);
-            const isMenuButton = menuButton.contains(event.target);
-            
-            if (!isClickInsideSidebar && !isMenuButton && sidebar.classList.contains('sidebar-active')) {
-                sidebar.classList.remove('sidebar-active');
-                overlay.classList.remove('overlay-active');
-            }
-        });
+        menuButton.addEventListener('click', openSidebar);
+        closeButton.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
     </script>
 </body>
 </html>
